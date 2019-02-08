@@ -14,15 +14,58 @@ Multiline comment
 
 //prompt("What type of pokemon do you like?");
 
+var player = {
+	name:"Bob",
+	race:"Human",
+	age:30,
+	health:100,	
+	inventory:{
+		keys:{
+			home:0,
+			castle:0,
+			inn:0,
+		},
+		food:{
+			water:1,
+			bread:0,
+			fish:0,
+			mutton:0,
+			rabbit:0,
+			apple:0,			
+		},
+		weapons:{
+			sword:0,
+			axe:0,
+			knife:0,
+		},
+		armor:{
+			shield:0,
+			armorClass:1,
+		}		
+	}
+	
+}
+
+function GetRandInt(max){
+	var randInt = Math.floor(Math.random()* Math.floor(max));
+	
+	return randInt;
+	
+}
+
+// Start Game
 Game();
 
 function Game(){
 	
-	alert("Legend of the Cactus Dragon!");
+	var wizardNames = ["Bethazar", "Mordac","Grendor","Orco"];
+	
+	alert("Legend of "+wizardNames[Math.floor(Math.random()* 4)]+"!");
 	
 	var playerName = prompt("What is your name?");
 	
 	alert("Welcome to the land of Drizdal "+ playerName);
+	
 	
 	Prison();
 	
@@ -44,6 +87,10 @@ function Game(){
 			else{
 				alert("Game Over!");
 			}
+		}
+		
+		else if(prison == "castle"){
+			Castle();
 		}
 		
 		else{
@@ -75,18 +122,45 @@ function Game(){
 		else{
 			alert("I don't understand "+swampEnv);
 			Swamp();
+		}		
+			
+			
 		}
 		
-		
-	} 
-	
-		
-		
-		
-	
-	
-	
+	function Castle(){
+			var insideCastle = prompt(" - upstairs - downstairs - courtyard - balcony - look ").toLowerCase();
+			
+			switch(insideCastle){
+				case "upstairs" || "go upstairs":
+					var upstairs = prompt("You walk a long flight of stairs to top floor of the castle.");
+					
+					Castle();
+				break;
+				case "downstairs":
+					alert("you go downstairs");
+					
+				break;
+				case "courtyard":
+					alert("you go to the courtyard");
+					Castle();
+				break;
+				case "balcony":
+					alert("you go to the balcony");
+					Castle();
+				break;
+				default:
+					alert("I don't know what "+insideCastle+" is!");
+					Castle();
+				break;		   
+				   
+				   }	
+		}
 	
 	
 	
 }
+	
+	
+	
+	
+
