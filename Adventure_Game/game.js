@@ -14,12 +14,23 @@ Multiline comment
 
 //prompt("What type of pokemon do you like?");
 
+
+
+var checkCoins = function(){
+	alert("Gold Coins: "+player.inventory.coins.gold+"\n Silver Coins: " +player.inventory.coins.silver+"\n Copper Coins: "+player.inventory.coins.copper);
+}
+
 var player = {
 	name:"Bob",
 	race:"Human",
 	age:30,
 	health:100,	
 	inventory:{
+		coins:{
+			gold:10,
+			silver:12,
+			copper:2000,			
+		},
 		keys:{
 			home:0,
 			castle:0,
@@ -93,6 +104,11 @@ function Game(){
 			Castle();
 		}
 		
+		else if(prison == "coins"){
+			checkCoins();
+			Prison();
+		}
+		
 		else{
 			alert("I dont know what "+prison+" is!");
 			Prison();
@@ -131,7 +147,9 @@ function Game(){
 			var insideCastle = prompt(" - upstairs - downstairs - courtyard - balcony - look ").toLowerCase();
 			
 			switch(insideCastle){
-				case "upstairs" || "go upstairs":
+				case "upstairs": 
+				case "go upstairs":
+				case "take elevator":	
 					var upstairs = prompt("You walk a long flight of stairs to top floor of the castle.");
 					
 					Castle();

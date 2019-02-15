@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Generic Adventure Game v0.1</title>
+    </head>
+
+    <body>
+    	<script>
+
+			var score = 0;
+
+			function death()
+			{
+				alert("YOU LOSE! GOOD DAY SIR!");
+				document.write("<h1>Score "+score+"</h1>");
+			}
+
+			function win()
+			{
+				score = 100;
+				alert("YOU WIN!");
+			}
+
+
+			/* --- Cave System --- */
+			function caveEnter()
+			{
+
+				var cave = new Array();
+				cave[0]="There is a Dragon in this cave!"+"<br>";
+				cave[1]="You found a chest of treasure!"+"<br>";
+				cave[2]="Except for a few cobwebs and some rocks the cave is pretty much empty!"+"<br>";
+				cave[3]="The cave is pitch black and the stench of death hangs in the air"+"<br>";
+
+				var randomCave = cave[Math.floor(Math.random() * cave.length)];
+
+				document.write(randomCave);
+
+				if(randomCave=="There is a Dragon in this cave!"+"<br>")
+				{
+					dragon();
+				}
+				else if(randomCave=="You found a chest of treasure!"+"<br>")
+				{
+					score += 100;
+					field();
+				}
+
+				else
+					field();
+
+			}
+			// End Cave
+			// Game Functions
+			function start ()
+			{
+				alert("Generic Adventure Game v0.1");
+				var hero = prompt("Enter Hero's name","Knight");
+				var nameConfirm = confirm("Is "+hero+" the name you want?");
+
+				if (nameConfirm == true)
+				{
+
+
+					field();
+
+				}
+				else
+					death();
+
+			}
+
+			function field()
+			{
+
+
+				var path1 = prompt("You awake from a most satisfying nap underneath a giant apple tree. After a long rest you are hungry so you pluck off the nearest apple and begin to eat. In the distance you notice a well used path to the west and a large cave to the north. A village to the east. Towards the south smoke rise above a dense forest of trees. What will you do? (north,east,south,west)");
+
+				switch (path1)
+				{
+					case "north":
+						caveEnter();
+						break;
+					case "south":
+						document.write("<h1 style='color:purple'>You wander off into the dark mists of the forest...Game Over!</h1>");
+						break;
+					case "east":
+						document.write("<h1 style='color:brown'>You got eaten by a Bear</h1>");
+						break;
+					case "west":
+						var path2=prompt("the road splits with a path to the right and a path to the left");
+
+            switch (path2)
+						{
+							case "right":
+								document.write("<h1 style='color:brown'>You got eaten by a Wolf</h1>");
+								break;
+							case "left":
+								document.write("<h1 style='color:brown'>You got eaten by a Giant Toad</h1>");
+								break;
+						}
+						break;
+					case "cave":
+						confirm("Are you sure you want to go in there?");
+						alert("You enter the cave it is dark and smells of dead things. Suddenly you hear a roar .... you've woken a DRAGON! Before you could turn and run you feel a blast of intense heat engulf you!");
+						document.write('<h1 style="color:red">Game Over</h1>');
+						death();
+						break;
+					default:
+						alert("I do not understand " + "'" + path1+ "'");
+						field();
+
+				}
+			}
+
+			function dragon ()
+			{
+				alert("You enter the cave it is dark and smells of dead things. Suddenly you hear a roar .... you've woken a DRAGON! Before you could turn and run you feel a blast of intense heat engulf you!");
+				document.write('<h1 style="color:red">Game Over</h1>');
+				death();
+			}
+
+			//Game Starts Here
+
+			 start();
+
+
+
+
+
+		</script>
+    </body>
+</html>
