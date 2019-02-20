@@ -40,9 +40,10 @@
 			// Game Global Variables & Expressions
 			// Score Variable
 			var score=0;
+			var tipAmount=0;
 			// Check score
 			var scoreChk = function(){
-				alert("Score: "+score+"/100");
+				alert("Score: "+score);
 			}
 			// Add value to total score
 			var scoreAdd = function(add){
@@ -78,12 +79,12 @@
 				PizzaShop();
 				function PizzaShop(){
 					
-					alert("The shop is busy with customers eating at the pizza buffet you are behind the counter taking orders and making pizzas");
+					alert("The shop is busy with customers eating at the pizza buffet. You are behind the counter taking orders and making pizzas");
 				
 					var phone = confirm("The phone is ringing, will you answer it?");
 					
 					if(phone){
-						alert("Hello This is Nico's Pizza Pie Cafe! How may I help you?");
+						alert("Nico: Hello This is Nico's Pizza Pie Cafe! How may I help you?");
 						var timer = setInterval(PhoneCall, 2000);						
 					}
 					else{
@@ -92,18 +93,41 @@
 					
 					function PhoneCall(){
 						var customer = new Array();
-						customer[0] = "Hello, I would like to order a pizza for delivery. My address is 555 main street. My phone number is 555-555-555. I would like a large pepperoni pizza, bread sticks and sauce, thank you!";
-						customer[1] = "Hey, is your refrigerator running...you better go catch it, heheheheheh. -Hangs up, Dial Tone-";
-						customer[2] = "Eeeeeh yeah! I wanna know how much youz pizza is? Do you price match...hows about coupons?";
-						customer[3] = "Do you guys have tacos? Ok. Sooorrry! Bye!";
-						customer[4] = "Ghostly voice - 'Yes, I would like a extra large cheese pizza and a two liter soda for delivery, please.....Address 666 Raven Court. Hurray Please! Thank you!";
-						customer[5] = "Do you sell pizza by the slice! How much! Thank you!";
-						customer[6] = "Do you do childrens birthday parties? Ok. Thanks for the information";
-						customer[7] = "Do you deliver! Theeeheeehee! -Hangs up, Dial Tone-";
+						customer[0] = "Customer: Hello, I would like to order a pizza for delivery. My address is 555 main street. My phone number is 555-555-555. I would like a large pepperoni pizza, bread sticks and sauce, thank you!";
+						customer[1] = "Customer: Hey, is your refrigerator running...you better go catch it, heheheheheh. -Hangs up, Dial Tone-";
+						customer[2] = "Customer: Eeeeeh yeah! I wanna know how much youz pizza is? Do you price match...hows about coupons?";
+						customer[3] = "Customer: Do you guys have tacos? Ok. Sooorrry! Bye!";
+						customer[4] = "Customer: Ghostly voice - 'Yes, I would like a extra large cheese pizza and a two liter soda for delivery, please.....Address 666 Raven Court. Hurray Please! Thank you!";
+						customer[5] = "Customer: Do you sell pizza by the slice! How much! Thank you!";
+						customer[6] = "Customer: Do you do childrens birthday parties? Ok. Thanks for the information";
+						customer[7] = "Customer: Do you deliver! Theeeheeehee! -Hangs up, Dial Tone-";
+						customer[8] = "Customer: This is Shane Dawson, Do you recycle your pizza?";
 						
 						var callInfo = customer[Math.floor(Math.random()*customer.length)];
 						
 						alert(callInfo);
+						
+						// Pizza delivery to house
+						if(callInfo == customer[0]){
+						   let deliver = confirm("Deliver Pizza to 555 Main Street?");
+							if(deliver){
+								alert("You hop into your car and drive down to 555 Main Street and deliver the pizza order to a nice family of hungry kids. They give you a nice tip.");
+								tipAmount += 5;
+								score += 10;
+								
+								alert("Tip Amount: "+tipAmount+"\n Score: "+score);
+								PizzaShop();
+							}
+						else if(callInfo == customer[4]){
+							let deliver = confirm("Deliver Pizza to 666 Raven Court?");
+							if(deliver){
+								alert("You grab the order and hop into your car punch in the address to your GPS. drive a mile out of town to 666 Raven Court");
+								HauntedHouse();
+							}
+						}	
+						
+							
+						}
 						
 						let phone = confirm("Hang up the phone or take the next call?");
 						
@@ -116,13 +140,9 @@
 						
 					}
 					
-				}
+				}	
 				
 				
-				
-				function ParkingLot(){
-					
-				}
 				
 				function Road(){
 					
