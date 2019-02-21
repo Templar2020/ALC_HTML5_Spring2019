@@ -20,6 +20,12 @@ var checkCoins = function(){
 	alert("Gold Coins: "+player.inventory.coins.gold+"\n Silver Coins: " +player.inventory.coins.silver+"\n Copper Coins: "+player.inventory.coins.copper);
 }
 
+var inventory ={
+	arrows:0,
+	maxArrows:100,
+} 
+
+
 
 var player = {
 	name:"Bob",
@@ -28,6 +34,7 @@ var player = {
 	health:100,	
 	inventory:{
 		coins:{
+			coin:1000,
 			gold:10,
 			silver:12,
 			copper:2000,			
@@ -76,6 +83,11 @@ function Game(){
 	
 	var playerName = prompt("What is your name?");
 	
+	while(!confirm("Are you sure you want "+playerName+" as a name?")){
+		playerName = prompt("What name do you want?");
+		
+	}
+	
 	alert("Welcome to the land of Drizdal "+ playerName);
 	
 	
@@ -108,6 +120,10 @@ function Game(){
 		else if(prison == "coins"){
 			checkCoins();
 			Prison();
+		}
+		
+		else if(prison=="shop"){
+			Shop();
 		}
 		
 		else{
@@ -143,7 +159,32 @@ function Game(){
 			
 			
 		}
+	function Shop(){
+		var arrowsShop = 100;
+		var arrowPrice = 1;
 		
+		
+		var purchase = prompt("Welcome to the Shop, what would you like to buy? \n- Arrows:"+arrowsShop).toLowerCase();
+		
+		if(purchase == "arrows" || purchase == "arrow"){
+			var arrowCon = prompt("How many arrows would you like to purchase?");
+			
+			while(!confirm("Are you sure you want to purchase "+arrowCon+" arrows, for "+arrowPrice+" per arrow?")){
+				arrowCon = prompt("How many arrows do you wish to buy?");
+			}
+			
+			for(i = 1; i <= arrowCon; i++){
+				inventory.arrows ++;
+				console.log("You have "+inventory.arrows+" arrows");				
+			}
+			alert("You have purchased "+arrowCon+" arrows. Thank you!");
+			Shop();			
+		}
+		else if(purchase == "exit"|| purchase == "leave"){
+					Prison();
+				}
+		
+	}	
 	function Castle(){
 			var insideCastle = prompt(" - upstairs - downstairs - courtyard - balcony - look ").toLowerCase();
 			
