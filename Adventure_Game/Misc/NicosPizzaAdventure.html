@@ -43,7 +43,7 @@
 			var tipAmount=0;
 			// Check score
 			var scoreChk = function(){
-				alert("Score: "+score);
+				alert("Tips: "+tipAmount+"\nScore: "+score);
 			}
 			// Add value to total score
 			var scoreAdd = function(add){
@@ -89,7 +89,8 @@
 					}
 					else{
 						PizzaShop();
-					}					
+					}
+					
 					
 					function PhoneCall(){
 						var customer = new Array();
@@ -153,7 +154,7 @@
 				}
 				
 				function Win(){
-					
+					alert("Congratulations you've won the game!\n\n Tips:"+tipAmount+"\nScore: "+score);
 				}
 				
 				function Lose(){

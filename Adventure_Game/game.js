@@ -23,6 +23,7 @@ var checkCoins = function(){
 var inventory ={
 	arrows:0,
 	maxArrows:100,
+	coins:125,
 } 
 
 
@@ -174,9 +175,16 @@ function Game(){
 			}
 			
 			for(i = 1; i <= arrowCon; i++){
+				//Add arrow to inventory
 				inventory.arrows ++;
-				console.log("You have "+inventory.arrows+" arrows");				
+				console.log("You have "+inventory.arrows+" arrows");
+				//Removes coin from inventory
+				inventory.coins --;
+				console.log("You have "+inventory.coins+" coins");
+				//Removes arrow from shop inventory
+				arrowsShop --;
 			}
+			alert("You have "+inventory.coins+" coins in your purse");
 			alert("You have purchased "+arrowCon+" arrows. Thank you!");
 			Shop();			
 		}
