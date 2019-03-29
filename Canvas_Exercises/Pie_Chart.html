@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Canvas Pie Chart</title>
+	</head>
+	<body>
+		<canvas width="200" height="200"></canvas>
+		<script>
+			const results = [
+				{name: "Satisfied", count: 1043, color: "lightblue"},
+				{name: "Neutral", count: 563, color: "lightgreen"},
+				{name: "Unsatisfied", count: 510, color: "pink"},
+				{name: "NoComment", count: 143, color: "silver"}	
+			];
+		
+			let ctx = document.querySelector("canvas").getContext("2d");
+			let total = results
+				.reduce(sum,{count}) =>sum + count, 0);
+			// Start at the top
+			let currentAngle = -0.5 * Math.PI;
+			for(let result of results){
+				let sliceAngle = (result.count / total)* 2 * Math.PI;
+				cx.beginPath();
+				// center=100,100, radius=100
+				// from current angle, clockwise by slice's angle
+				
+			}
+		</script>
+	</body>
+</html>
