@@ -1,0 +1,62 @@
+/* Stylesheet for Mobile App */
+
+/* Reset */
+html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li, header,footer,nav
+{
+	margin:0;
+	padding:0;
+}
+
+/* Universal Style */
+body
+{
+	background-color:azure;
+}
+div#container
+{
+	width:1200px;
+	height:800px;
+	background-color:#b9ff72;
+}
+
+header
+{
+	width:1150px;
+	padding:25px;
+	background-color: beige;
+}
+
+header h1
+{
+	color:#2e00aa;
+	/*font-family:"Android",sans-serif;*/
+	font-family: 'Roboto', sans-serif;
+	font-size:2.6em;
+}
+
+div#content{
+	width:100%;
+	background-color: blanchedalmond;
+}
+
+nav{
+	width:100%;
+	background-color:bisque;
+}
+
+nav ul{
+	display: block;
+	margin:auto;
+	color:darkslategray;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.1em;
+	list-style: none;
+}
+nav ul li{
+	float:left;
+	padding:5px 15px;
+}
+.keepopen{
+	clear:both;
+}
+
