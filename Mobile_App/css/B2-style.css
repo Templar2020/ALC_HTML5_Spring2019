@@ -32,8 +32,15 @@ header{
 	background-color: antiquewhite;
 }
 
+header img#applogo{
+	display: block;
+	margin:auto;
+	width:100px;
+}
+
 header h1{
 	color:darkblue;
+	text-align: center;
 	font-family: 'Special Elite', cursive;
 	font-size: 2.5em;
 }
@@ -42,6 +49,7 @@ div#content{
 	width:100%;
 	background-color:bisque;
 }
+
 
 /*
 nav{
@@ -69,7 +77,7 @@ nav ul li a:hover{
 }
 */
 .icon-bar {
-  position:absolute;
+  position:sticky;
   bottom:0;
   left:0; 	
   width: 100%;
