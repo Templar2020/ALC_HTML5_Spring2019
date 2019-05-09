@@ -82,7 +82,7 @@ nav ul li a:hover{
 }
 */
 .icon-bar {
-  position:sticky;
+  position:fixed;
   bottom:0;
   left:0; 	
   width: 100%;
@@ -169,7 +169,6 @@ div.keepOpen{
 
 
 
-	
 	
 
 
