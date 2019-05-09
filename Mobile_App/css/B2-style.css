@@ -47,7 +47,12 @@ header h1{
 
 div#content{
 	width:100%;
+	height:auto;
 	background-color:bisque;
+}
+
+div#content h3{
+	text-align:center;
 }
 
 
@@ -77,7 +82,7 @@ nav ul li a:hover{
 }
 */
 .icon-bar {
-  position:sticky;
+  position:fixed;
   bottom:0;
   left:0; 	
   width: 100%;
@@ -112,11 +117,6 @@ footer{
 	background-color: chocolate;	
 }
 
-div.keepOpen{
-	clear: both;
-}
-
-
 
 @media screen and (max-width: 600px) {
 	div#container{
@@ -129,7 +129,46 @@ div.keepOpen{
 	}
 }
 */
-	
+
+div#product_grp{
+	flex:auto;
+	width:80%;
+	margin:auto;
+}
+
+figure.product{
+	float:left;
+	margin:10px;
+	min-width:30%;
+	max-width:50%;
+	background-color: cadetblue;
+	border-radius:5%;
+}
+
+figure.product img{
+	display:block;
+	padding:10px 0;
+	width:80%;
+	margin:auto;
+}
+
+figure.product figcaption{
+	text-align: center;
+	color:white;
+	font-family: fantasy;
+	font-size:24px;
+}
+
+div.keepOpen{
+	clear: both;
+}
+
+
+
+
+
+
+
 	
 
 
