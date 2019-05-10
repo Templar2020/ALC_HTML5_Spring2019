@@ -27,7 +27,7 @@ div#container
 }
 
 header{
-	width:94.2%;
+	width:auto;
 	padding:50px;
 	background-color: antiquewhite;
 }
@@ -118,29 +118,20 @@ footer{
 }
 
 
-@media screen and (max-width: 600px) {
-	div#container{
-		width:100%;
-	}
-	
-	nav ul li a{
-		float:none;	
-		text-align:center;
-	}
-}
 */
 
 div#product_grp{
-	flex:auto;
-	width:80%;
+	max-width:60%;
+	min-width:20%;
 	margin:auto;
 }
 
 figure.product{
+	display:block;
 	float:left;
-	margin:10px;
+	margin:10px 15px;
 	min-width:30%;
-	max-width:50%;
+	max-width:45%;
 	background-color: cadetblue;
 	border-radius:5%;
 }
@@ -163,7 +154,23 @@ div.keepOpen{
 	clear: both;
 }
 
+@media screen and (max-width: 600px) {
+	figure.product{
+		float:none;
+		margin:10px auto;
+		min-width:50%;
+		max-width:100%;
+		background-color: cadetblue;
+		border-radius:5%;
+	}
+	figure.product figcaption{
+	text-align: center;
+	color:white;
+	font-family: fantasy;
+	font-size:12px;
+}
 
+}
 
 
 
