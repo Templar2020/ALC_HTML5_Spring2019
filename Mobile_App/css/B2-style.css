@@ -154,7 +154,7 @@ div.keepOpen{
 	clear: both;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
 	figure.product{
 		float:none;
 		margin:10px auto;
@@ -170,7 +170,13 @@ div.keepOpen{
 	font-size:12px;
 }
 
-}
+	 legend, span, input, textarea {
+		display:block;
+		margin:auto;
+		text-align:center;
+		font-family:sans-serif;
+		color:blue;
+	}
 
 
 
