@@ -163,6 +163,7 @@ div.keepOpen{
 		background-color: cadetblue;
 		border-radius:5%;
 	}
+	
 	figure.product figcaption{
 	text-align: center;
 	color:white;
@@ -170,14 +171,14 @@ div.keepOpen{
 	font-size:12px;
 }
 
-	 legend, span, input, textarea {
+	legend, span, input, textarea{
 		display:block;
 		margin:auto;
 		text-align:center;
 		font-family:sans-serif;
 		color:blue;
 	}
-
+}
 
 
 
